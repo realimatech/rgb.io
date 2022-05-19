@@ -61,11 +61,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21c3dd8e53ac5f41ab7d51be0545fb7, type: 3}
---- !u!195 &8794916871325516734 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 3388036280320162954, guid: f21c3dd8e53ac5f41ab7d51be0545fb7, type: 3}
-  m_PrefabInstance: {fileID: 6127546724306976564}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375870998370948136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5048948761666349852, guid: f21c3dd8e53ac5f41ab7d51be0545fb7, type: 3}
@@ -82,11 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02346ba65947ff542ae1df548a3c1373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7394828545924525796
+--- !u!114 &3749179638167804021 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6993712279266158401, guid: f21c3dd8e53ac5f41ab7d51be0545fb7, type: 3}
+  m_PrefabInstance: {fileID: 6127546724306976564}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375870998370948136}
   m_Enabled: 1
@@ -94,10 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4d6769aa380f34d8e4a8531d343b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castMask:
-    serializedVersion: 2
-    m_Bits: 1
-  _agent: {fileID: 8794916871325516734}
 --- !u!114 &3161818901527117776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +131,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7394828545924525796}
+      - m_Target: {fileID: 3749179638167804021}
         m_TargetAssemblyTypeName: realima.rgb.CharacterAim, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 0
@@ -197,7 +187,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7394828545924525796}
+      - m_Target: {fileID: 3749179638167804021}
         m_TargetAssemblyTypeName: realima.rgb.CharacterAim, Assembly-CSharp
         m_MethodName: AimAt
         m_Mode: 0

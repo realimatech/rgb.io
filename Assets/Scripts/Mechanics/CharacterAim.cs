@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace realima.rgb
@@ -9,15 +10,19 @@ namespace realima.rgb
 
     public class CharacterAim : MonoBehaviour
     {
-        public LayerMask castMask;
-
+        [SerializeField]
+        private LayerMask castMask;
         [SerializeField]
         private NavMeshAgent _agent;
+        [SerializeField]
+        private Transform _projectileSpawnPoint;
 
         private Camera _cam;
 
         public Vector2 LastPoint { get; private set; }
-        public Action AttackEvent { get; internal set; }
+
+        [SerializeField]
+        private UnityEvent AttackEvent;
 
         private void Awake()
         {

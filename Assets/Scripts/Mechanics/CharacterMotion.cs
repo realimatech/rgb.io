@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace realima.rgb
@@ -18,7 +19,8 @@ namespace realima.rgb
 
         public Vector3 RelativeDirection { get; private set; }
 
-        public Action<Vector3> SpeedUpdateEvent { get; internal set; }
+        [SerializeField]
+        private UnityEvent<Vector3> SpeedUpdateEvent;
 
         private void Awake()
         {

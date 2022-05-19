@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,23 +12,19 @@ namespace realima.rgb
 
         [SerializeField]
         private Animator _anim;
-        [SerializeField]
-        private CharacterMotion _motionComponent;
-        [SerializeField]
-        private CharacterAim _aimComponent;
 
         private int _lateHealth;
         private float _lateSpeedMag;
         private float _enlapsedIdleTime; //possibly go to motion component
         private float _nextSenseTime;
 
-        float RandomSenseDelay() => senseTimeInSecs + Random.Range(-senseRandomnessRange / 2, senseRandomnessRange / 2);
+        float RandomSenseDelay() => senseTimeInSecs + UnityEngine.Random.Range(-senseRandomnessRange / 2, senseRandomnessRange / 2);
+
+        public Action spawnBulletEvent;
 
         private void Awake()
         {
             _anim.SetInteger("Health", 1);
-            _motionComponent.SpeedUpdateEvent += OnSpeedUpdate;
-            _aimComponent.AttackEvent += OnAttack;
         }
 
         private void LateUpdate()
@@ -75,6 +72,11 @@ namespace realima.rgb
                 if (health < _lateHealth && damage) _anim.SetTrigger("Hit");
                 _anim.SetBool("Stun", stun);
             }
+        }
+
+        public void SpawnBullet()
+        {
+            spawnBulletEvent?.Invoke();
         }
 
         public void OnDieAnimationEnd()
